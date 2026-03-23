@@ -10,7 +10,8 @@ app.use("/api/contact", contactRoutes);
 app.use(express.json());
 
 // MongoDB connection
-mongoose.connect("mongodb://mkjngd_db_user:12345@ac-w3oefqx-shard-00-00.rkhscw2.mongodb.net:27017,ac-w3oefqx-shard-00-01.rkhscw2.mongodb.net:27017,ac-w3oefqx-shard-00-02.rkhscw2.mongodb.net:27017/?ssl=true&replicaSet=atlas-ms2jeq-shard-0&authSource=admin&appName=Cluster0/viksitDB")
+mongoose.connect(process.env.MONGODB_URI)
+mongoose.connect("mongodb://mkjngd_db_user:heyansh2004@ac-w3oefqx-shard-00-00.rkhscw2.mongodb.net:27017,ac-w3oefqx-shard-00-01.rkhscw2.mongodb.net:27017,ac-w3oefqx-shard-00-02.rkhscw2.mongodb.net:27017/?ssl=true&replicaSet=atlas-ms2jeq-shard-0&authSource=admin&appName=Cluster0/viksitDB")
   .then(() => console.log("MongoDB connected"))
   .catch(err => console.log(err));
 
